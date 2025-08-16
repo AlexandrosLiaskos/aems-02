@@ -1,5 +1,27 @@
 [
   {
+    "id": "3b0fa73d-629b-40ec-a3c7-0d1927b93297",
+    "gmailId": "198acd8ad251ec5b",
+    "threadId": "198acd86551943ac",
+    "subject": "ddd",
+    "body": "# ΤΙΜΟΛΟΓΙΟ ΠΩΛΗΣΗΣ **Αριθμός:** TF-2024-003 **Ημερομηνία:** 23/01/2024 **Τρόπος Πληρωμής:** Μετρητά **Πελάτης:** Computer World SA Πατησίων 120 10434 Αθήνα ΑΦΜ: 123789456 | Περιγραφή | Ποσότητα | Τιμή Μονάδας | Σύνολο | | --- | --- | --- | --- | | Desktop Computer i7/16GB/1TB SSD | 3 | €700.00 | €2,100.00 | | Monitor 24\" Full HD | 3 | €300.00 | €900.00 | | Keyboard & Mouse Set Wireless | 3 | €60.00 | €180.00 | | External HDD 2TB USB 3.0 | 2 | €120.00 | €240.00 | | UPS 650VA με surge protection | 3 | €150.00 | €450.00 | | Network Switch 8-port Gigabit | 1 | €120.00 | €120.00 | | Cables & Accessories | 1 | €210.00 | €210.00 | | **Καθαρή Αξία:** | **€4,200.00** | | --- | --- | | **ΦΠΑ 24%:** | **€1,008.00** | | **ΣΥΝΟΛΟ:** | **€5,208.00** | **Σημειώσεις:** Εγκατάσταση και παραμετροποίηση περιλαμβάνεται **Εγγύηση:** 2 χρόνια για όλα τα προϊόντα",
+    "htmlBody": null,
+    "snippet": "# ΤΙΜΟΛΟΓΙΟ ΠΩΛΗΣΗΣ **Αριθμός:** TF-2024-003 **Ημερομηνία:** 23/01/2024 **Τρόπος Πληρωμής:** Μετρητά **Πελάτης:** Computer World SA Πατησίων 120 10434 Αθήνα ΑΦΜ: 123789456 | Περιγραφή | Ποσότητα | Τιμή",
+    "fromAddress": "alexliaskosga@gmail.com",
+    "fromName": "Alex Liaskos",
+    "toAddress": "alexliaskosga@gmail.com",
+    "date": "2025-08-15T08:28:58.000Z",
+    "category": "invoice",
+    "status": "MANAGED",
+    "fetchedAt": "2025-08-15T08:29:16.197Z",
+    "reviewedAt": "2025-08-15T08:30:41.298Z",
+    "managedAt": "2025-08-15T08:30:59.986Z",
+    "isDeleted": false,
+    "deletedAt": null,
+    "userId": "single-user",
+    "updatedAt": "2025-08-15T08:30:59.988Z"
+  },
+  {
     "id": "3af67e89-9611-4def-aa19-bddf7f2106bd",
     "gmailId": "198a8588a5a6a8ee",
     "threadId": "198a85753edf7736",

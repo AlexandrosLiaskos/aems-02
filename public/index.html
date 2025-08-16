@@ -12,20 +12,23 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1>AEMS</h1>
-                
+                <h1 id="aemsTitle" class="clickable-title" title="Go to Home">
+                    <i class="fas fa-home" style="margin-right: 0.5rem; font-size: 0.9em;"></i>
+                    AEMS
+                </h1>
+
                 <div class="header-actions">
                     <!-- Sync Button (shown when connected) -->
                     <button class="btn btn-primary btn-sm" id="syncBtn" style="display: none;">
                         <i class="fas fa-sync"></i>
                         <span class="sr-only">Sync Emails</span>
                     </button>
-                    
+
                     <!-- Recycle Bin Button (shown when connected) -->
                     <button class="btn btn-ghost btn-sm" id="recycleBinBtn" style="display: none;" title="Recycle Bin">
                         <i class="fas fa-trash-restore"></i>
                     </button>
-                    
+
                     <!-- Notifications -->
                     <div class="notification-dropdown" id="notificationDropdown">
                         <button class="notification-btn" id="notificationBtn">
@@ -33,11 +36,16 @@
                             <span class="notification-count" id="notificationCount" style="display: none;">0</span>
                         </button>
                         <div class="dropdown-content" id="notificationList">
-                            <div class="dropdown-header">Notifications</div>
-                            <div id="notificationItems">No new notifications</div>
+                            <div class="dropdown-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>New Emails</span>
+                                <button id="markAllReadBtn" class="btn btn-ghost btn-xs" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">
+                                    Mark All Read
+                                </button>
+                            </div>
+                            <div id="notificationItems">No new emails</div>
                         </div>
                     </div>
-                    
+
                     <!-- User Profile -->
                     <div class="user-dropdown" id="userDropdown">
                         <button class="user-btn" id="userButton">
@@ -70,73 +78,53 @@
         </div>
     </div>
 
-    <!-- Email Details Modal -->
-    <div id="emailModal" class="modal" style="display: none;">
-        <div class="modal-content">
+    <!-- Custom Confirmation Dialog -->
+    <div id="confirmDialog" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 400px;">
             <div class="modal-header">
-                <h3 id="modalTitle">Email Details</h3>
-                <button id="closeModalBtn" class="close-btn">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h3 id="confirmTitle">Confirm Action</h3>
             </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Email details will be inserted here -->
+            <div class="modal-body" id="confirmBody">
+                <p id="confirmMessage">Are you sure you want to proceed?</p>
             </div>
-            <div class="modal-footer" id="modalFooter">
-                <!-- Action buttons will be inserted here -->
+            <div class="modal-footer" id="confirmFooter">
+                <button class="btn btn-ghost" id="confirmCancel">Cancel</button>
+                <button class="btn btn-primary" id="confirmOk">Confirm</button>
             </div>
         </div>
     </div>
 
+    <!-- Email Modal (for sync old, etc.) -->
+    <div id="emailModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated dynamically -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <!-- Buttons will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/security-utils.js"></script>
+    <script src="/js/performance-cache.js"></script>
+    <script src="/js/ui-enhancements.js"></script>
     <script src="/js/app.js"></script>
-    <script>
+    <script nonce="{{NONCE}}">
         // Wait for DOM to be loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Gmail Connect Button
-            const userButton = document.getElementById('userButton');
-            if (userButton) {
-                userButton.addEventListener('click', function() {
-                    // Check if user is already connected
-                    const userInfo = document.getElementById('userInfo');
-                    if (userInfo && userInfo.innerHTML.trim()) {
-                        // Show dropdown if already connected
-                        const dropdown = document.getElementById('userDropdown');
-                        dropdown.classList.toggle('active');
-                    } else {
-                        // Connect to Gmail
-                        window.location.href = '/auth/google';
-                    }
-                });
-            }
+            // Gmail Connect Button - moved to app.js using event delegation
 
-            // Sync Button
-            const syncBtn = document.getElementById('syncBtn');
-            if (syncBtn) {
-                syncBtn.addEventListener('click', function() {
-                    if (window.app && window.app.currentView === 'dashboard') {
-                        window.app.syncEmails();
-                    }
-                });
-            }
+            // Sync Button - moved to app.js using event delegation
 
-            // Recycle Bin Button
-            const recycleBinBtn = document.getElementById('recycleBinBtn');
-            if (recycleBinBtn) {
-                recycleBinBtn.addEventListener('click', function() {
-                    if (window.app && window.app.currentView === 'dashboard') {
-                        window.app.showRecycleBin();
-                    }
-                });
-            }
+            // Recycle Bin Button - moved to bindDashboardEvents() in app.js
 
-            // Notification Button
-            const notificationBtn = document.getElementById('notificationBtn');
-            if (notificationBtn) {
-                notificationBtn.addEventListener('click', function() {
-                    const dropdown = document.getElementById('notificationDropdown');
-                    dropdown.classList.toggle('active');
-                });
-            }
+            // AEMS Title Click Handler - moved to app.js using event delegation
+
+            // Notification Button - moved to app.js using event delegation
 
             // Sign Out Button
             const signOutBtn = document.getElementById('signOutBtn');
@@ -146,26 +134,8 @@
                 });
             }
 
-            // Close Modal Button
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', function() {
-                    const modal = document.getElementById('emailModal');
-                    if (modal) {
-                        modal.style.display = 'none';
-                    }
-                });
-            }
 
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.notification-dropdown')) {
-                    document.getElementById('notificationDropdown')?.classList.remove('active');
-                }
-                if (!e.target.closest('.user-dropdown')) {
-                    document.getElementById('userDropdown')?.classList.remove('active');
-                }
-            });
+            // Dropdown closing logic - moved to app.js using event delegation
         });
 
     </script>

@@ -1,0 +1,17 @@
+{
+  "syncInterval": 5,
+  "autoSync": true,
+  "emailCategories": [
+    "customer_inquiry",
+    "invoice"
+  ],
+  "language": "both",
+  "notifications": true,
+  "lastSync": "2025-08-15T08:00:14.368Z",
+  "syncStats": {
+    "total": 101,
+    "successful": 101,
+    "failed": 0,
+    "lastSync": "2025-08-15T08:00:14.363Z"
+  }
+}

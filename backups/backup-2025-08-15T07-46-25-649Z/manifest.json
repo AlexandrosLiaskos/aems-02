@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-15T07-46-25-649Z",
+  "version": "1.0",
+  "created": "2025-08-15T07:46:25.696Z",
+  "files": [
+    {
+      "path": "attachments/all.json",
+      "size": 2,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/deleted/all.json",
+      "size": 21979,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/fetched/customer-inquiries.json",
+      "size": 2714,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/fetched/invoices.json",
+      "size": 2,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/fetched/other.json",
+      "size": 144155,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/managed/customer-inquiries.json",
+      "size": 4008,
+      "modified": "2025-08-15T07:46:25.657Z"
+    },
+    {
+      "path": "emails/managed/invoices.json",
+      "size": 2105,
+      "modified": "2025-08-15T07:46:25.667Z"
+    },
+    {
+      "path": "emails/managed/other.json",
+      "size": 2,
+      "modified": "2025-08-15T07:46:25.667Z"
+    },
+    {
+      "path": "emails/review/customer-inquiries.json",
+      "size": 3002,
+      "modified": "2025-08-15T07:46:25.667Z"
+    },
+    {
+      "path": "emails/review/invoices.json",
+      "size": 2,
+      "modified": "2025-08-15T07:46:25.667Z"
+    },
+    {
+      "path": "emails/review/other.json",
+      "size": 2,
+      "modified": "2025-08-15T07:46:25.667Z"
+    },
+    {
+      "path": "extracted-data/customer-inquiries.json",
+      "size": 6041,
+      "modified": "2025-08-15T07:46:25.677Z"
+    },
+    {
+      "path": "extracted-data/invoices.json",
+      "size": 662,
+      "modified": "2025-08-15T07:46:25.677Z"
+    },
+    {
+      "path": "notifications/all.json",
+      "size": 9540,
+      "modified": "2025-08-15T07:46:25.677Z"
+    },
+    {
+      "path": "settings.json",
+      "size": 319,
+      "modified": "2025-08-15T07:46:25.677Z"
+    },
+    {
+      "path": "users.json",
+      "size": 2206,
+      "modified": "2025-08-15T07:46:25.677Z"
+    }
+  ],
+  "checksum": "ebb21342fd58eea50afe5782ad50cfc0"
+}
