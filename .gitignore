@@ -12,8 +12,17 @@ yarn-error.log*
 .env.production.local
 
 # Logs
-logs
+logs/
 *.log
+
+# Data directory (contains sensitive user data and tokens)
+data/
+
+# Backups (may contain sensitive data)
+backups/
+
+# Uploads directory
+uploads/
 
 # Runtime data
 pids
